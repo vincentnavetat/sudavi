@@ -20,8 +20,6 @@
 .btn:link,
 .btn:visited {
   border-radius: .3em;
-  border-style: solid;
-  border-width: 1px;
   color: #111;
   display: inline-block;
   letter-spacing: .15em;
@@ -34,14 +32,12 @@
 
 .btn:hover {
   color: #7FDBFF;
-  border: 1px solid #7FDBFF;
   -webkit-transition: background-color .3s, color .3s, border .3s;
           transition: background-color .3s, color .3s, border .3s;
 }
 
 .btn:active {
   color: #0074D9;
-  border: 1px solid #0074D9;
   -webkit-transition: background-color .3s, color .3s, border .3s;
           transition: background-color .3s, color .3s, border .3s;
 }
@@ -201,7 +197,7 @@
 
 .btn--green:hover {
   color: #fff;
-  background-color: #777;
+  background-color: var(--dark-green);
   border-color: #777;
 }
 
@@ -209,14 +205,13 @@
   color: #fff;
   background-color: #999;
   border-color: #999;
-}
-
-.btn--green:hover {
-  background-color: #444;
+  box-shadow: 0 .125rem var(--dark-green);
+  transform: translateY(.125rem);
 }
 
 .btn--green {
   background-color: var(--green);
+  box-shadow: 0 .25rem var(--dark-green);
 }
 
 
