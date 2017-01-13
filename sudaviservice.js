@@ -14,6 +14,9 @@ SuDaVi.service("sudavicode",function(){
                 this.Attempts = 0;
             }
         },
+        getAttempts : function(){
+            return this.Attempts;
+        },
         getTemplate : function (){
             //w: -1 => do nothing
             //w: 0 => look for number
@@ -227,6 +230,9 @@ SuDaVi.service("sudavicode",function(){
             }else{
                 this.Attempts++;
             }
+        },
+        getSolutionMatrix : function(){
+            return this.result;
         }
     };
 });
