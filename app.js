@@ -49,6 +49,7 @@ SuDaVi.controller('mainController', function($scope,$timeout,sudavicode){
     }
 
     $scope.onSolution = function($event){
+      
         var solutionMatrix = sudavicode.core.getSolutionMatrix();
         for(var x = 0; x < sudavicode.core.maxLength; x++)
         {

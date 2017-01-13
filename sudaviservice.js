@@ -7,7 +7,7 @@ SuDaVi.service("sudavicode",function(){
         insults: ["Really??",
                     "Please, use your brain a little",
                     "Your mom is getting ashamed",
-                    "Even Joshua is better than you...",
+                    "Even my grandma is better than you...",
                     "You're embarrassing yourself",
                     "Delwar, is it you playing?",
                     "Ok, time to click the Solution button",
@@ -222,7 +222,7 @@ SuDaVi.service("sudavicode",function(){
                     var canBe = this.CanBeInVertical(j,template,number);
                         canBe = canBe && this.CanBeInHorizontal(i,template,number)
                         canBe = canBe && template[i][j].n == -1;
-                    
+
                     if(canBe){
                         return canBe;
                     }
