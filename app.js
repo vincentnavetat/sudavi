@@ -1,7 +1,13 @@
 var SuDaVi = angular.module('SuDaVi',[]);
 
-SuDaVi.controller('mainController', function($scope,sudavicode){
+SuDaVi.controller('mainController', function($scope,$timeout,sudavicode){
 
+    //Init SuDaVi
+    sudavicode.core.init();
+    $scope.template = sudavicode.core.getUserMatrix();
+    $scope.Attempts = sudavicode.core.getAttempts();
+
+    //Events
     $scope.onKeyNumber = function($event){
         var key = $event.keyCode;
         console.log(key);
@@ -16,26 +22,36 @@ SuDaVi.controller('mainController', function($scope,sudavicode){
                 var value = parseInt(el.value);
 
                 var isValid = sudavicode.core.isValidNumberInXY(x,y,value);
+                var attempts = sudavicode.core.getAttempts()
                 console.log(isValid);
                 if(isValid){
                     el.style.backgroundColor = "#009900";
                     el.disabled = true;
                 }else{
                     el.style.backgroundColor = "#E50000";
+                    var element = document.body;
+                    if(attempts > 1){
+                        element.classList.remove("mistake-" + (attempts - 1));
+                    }
+                    element.classList.add("mistake-" + attempts);
                 }
-                $scope.Attempts = sudavicode.core.Attempts;
-                this.AreYouDone = sudavicode.core.isDone(this.template);
-                if(this.AreYouDone){
+                $scope.Attempts = attempts;
+                $scope.AreYouDone = sudavicode.core.isDone($scope.template);
+                if($scope.AreYouDone){
                     alert("yep");
                 }
             }
         }
-
     }
 
-    sudavicode.core.init();
-
-    $scope.template = sudavicode.core.getUserMatrix();
-    $scope.Attemps = sudavicode.core.attemps;
-
+    $scope.onSolution = function($event){
+        var solutionMatrix = sudavicode.core.getSolutionMatrix();
+        for(var x = 0; x < sudavicode.core.maxLength; x++)
+        {
+            for(var y = 0; y < sudavicode.core.maxLength; y++)
+            {
+                document.getElementById("element["+x+"]["+y+"]").value = solutionMatrix[x][y].n;
+            }
+        }
+    }
 });

@@ -13,17 +13,18 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <link rel="stylesheet" href="/css/tachyons.css">
 
-    <script src="//code.angularjs.org/latest/angular.min.js"></script>
+    <!-- <script src="//code.angularjs.org/latest/angular.min.js"></script> -->
+    <script data-require="angular.js@*" data-semver="1.2.1" src="http://code.angularjs.org/1.2.1/angular.js"></script>
     <script src="app.js"></script>
     <script src="sudaviservice.js"></script>
   </head>
   <body class="bg-base bg-center pa1 h-100">
+    <div ng-controller="mainController">
     <div class="cf mw6 center">
       <h1 class="f1 serif normal tc white mt5 mb0">Sudavi</h1>
       <h2 class="f3 tc normal white nt2 mb5">You really think you're smart?</h2>
 
       <div class="fl w-100 pa1">
-        <div ng-controller="mainController">
           <div ng-repeat="row in template track by $index">
             <div ng-repeat="col in row track by $index">
               <div class="fl w-10 pa1">
@@ -38,25 +39,21 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
-
+  <div>
+  </div>
     <div class="cf mw7 center">
       <div class="fl w-100 pa1 bg-white-70 br2 mt5">
         <div class="fl w-50 pa1">
-          <div class="pv1 f4" ng-controller="mainController">
             Mistakes: {{Attempts}}
-          </div>
           <div class="pv1 f6">
             Oh god...
           </div>
         </div>
         <div class="fl w-50 pa1">
           <div class="tr">
-            <a href="#0" class="btn btn--green tc">
-              Solution
-            </a>
+            <button ng-click="onSolution()" type="button" class="btn btn--green tc">Solution!</button>
           </div>
         </div>
       </div>
@@ -66,6 +63,7 @@
       <div class="tc">
         Made with	&hearts; by Suji, Daniel and Vincent
       </div>
+    </div>
     </div>
   </body>
 </html>
