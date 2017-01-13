@@ -1333,6 +1333,16 @@ code, .code { font-family: Consolas, monaco, monospace; }
 .bg-washed-yellow { background-color: #fffceb; }
 .bg-washed-red { background-color: #ffdfdf; }
 .bg-base { background: -webkit-linear-gradient( top, #ffb372 0%, #ffe471 100% ); background: linear-gradient( to bottom, #ffb372 0%, #ffe471 100% ); background-attachment: fixed; }
+.mistake-2 { background: -webkit-linear-gradient( top, #ffa559 0%, #ffe471 100% ); background: linear-gradient( to bottom, #ffa559 0%, #ffe471 100% ); }
+.mistake-4 { background: -webkit-linear-gradient( top, #ff983f 0%, #ffa559 100% ); background: linear-gradient( to bottom, #ff983f 0%, #ffa559 100% ); }
+.mistake-6 { background: -webkit-linear-gradient( top, #ff8a26 0%, #ff983f 100% ); background: linear-gradient( to bottom, #ff8a26 0%, #ff983f 100% ); }
+.mistake-8 { background: -webkit-linear-gradient( top, #ff7c0c 0%, #ff8a26 100% ); background: linear-gradient( to bottom, #ff7c0c 0%, #ff8a26 100% ); }
+.mistake-10 { background: -webkit-linear-gradient( top, #f26f00 0%, #ff7c0c 100% ); background: linear-gradient( to bottom, #f26f00 0%, #ff7c0c 100% ); }
+.mistake-12 { background: -webkit-linear-gradient( top, #d86400 0%, #f26f00 100% ); background: linear-gradient( to bottom, #d86400 0%, #f26f00 100% ); }
+.mistake-14 { background: -webkit-linear-gradient( top, #bf5800 0%, #d86400 100% ); background: linear-gradient( to bottom, #bf5800 0%, #d86400 100% ); }
+.mistake-16 { background: -webkit-linear-gradient( top, #a54c00 0%, #bf5800 100% ); background: linear-gradient( to bottom, #a54c00 0%, #bf5800 100% ); }
+.mistake-18 { background: -webkit-linear-gradient( top, #8c4000 0%, #a54c00 100% ); background: linear-gradient( to bottom, #8c4000 0%, #a54c00 100% ); }
+.mistake-14 { background: -webkit-linear-gradient( top, #723500 0%, #8c4000 100% ); background: linear-gradient( to bottom, #723500 0%, #8c4000 100% ); }
 /* 
   
    SKINS:PSEUDO

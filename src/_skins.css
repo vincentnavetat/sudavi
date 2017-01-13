@@ -174,3 +174,43 @@
   background: linear-gradient(to bottom, var(--gold) 0%, var(--yellow) 100%);
   background-attachment: fixed;
 }
+
+.mistake-2 {
+  background: linear-gradient(to bottom, #ffa559 0%, var(--yellow) 100%);
+}
+
+.mistake-4 {
+  background: linear-gradient(to bottom, #ff983f 0%, #ffa559 100%);
+}
+
+.mistake-6 {
+  background: linear-gradient(to bottom, #ff8a26 0%, #ff983f 100%);
+}
+
+.mistake-8 {
+  background: linear-gradient(to bottom, #ff7c0c 0%, #ff8a26 100%);
+}
+
+.mistake-10 {
+  background: linear-gradient(to bottom, #f26f00 0%, #ff7c0c 100%);
+}
+
+.mistake-12 {
+  background: linear-gradient(to bottom, #d86400 0%, #f26f00 100%);
+}
+
+.mistake-14 {
+  background: linear-gradient(to bottom, #bf5800 0%, #d86400 100%);
+}
+
+.mistake-16 {
+  background: linear-gradient(to bottom, #a54c00 0%, #bf5800 100%);
+}
+
+.mistake-18 {
+  background: linear-gradient(to bottom, #8c4000 0%, #a54c00 100%);
+}
+
+.mistake-14 {
+  background: linear-gradient(to bottom, #723500 0%, #8c4000 100%);
+}
