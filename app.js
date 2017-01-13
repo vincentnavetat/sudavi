@@ -19,8 +19,14 @@ SuDaVi.controller('mainController', function($scope,sudavicode){
                 console.log(isValid);
                 if(isValid){
                     el.style.backgroundColor = "#009900";
+                    el.disabled = true;
                 }else{
                     el.style.backgroundColor = "#E50000";
+                }
+                $scope.Attempts = sudavicode.core.Attempts;
+                this.AreYouDone = sudavicode.core.isDone(this.template);
+                if(this.AreYouDone){
+                    alert("yep");
                 }
             }
         }
@@ -29,6 +35,7 @@ SuDaVi.controller('mainController', function($scope,sudavicode){
 
     sudavicode.core.init();
 
-    $scope.template = sudavicode.core.getTemplate();
+    $scope.template = sudavicode.core.getUserMatrix();
+    $scope.Attemps = sudavicode.core.attemps;
 
 });

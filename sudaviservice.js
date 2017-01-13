@@ -3,12 +3,15 @@ SuDaVi.service("sudavicode",function(){
     this.core = {
         errorColletion : ["Invalid size on element"],
         maxLength : 9,
+        Attempts : 0,
         init: function(){
             var isValid = this.isValidateTemplate()
             if(isValid.result)
             {
                 console.log(isValid.message);
                 this.solveSudoku(isValid.template);
+                this.initUserMatrix();
+                this.Attempts = 0;
             }
         },
         getTemplate : function (){
@@ -34,7 +37,16 @@ SuDaVi.service("sudavicode",function(){
                             [{n:-1, w:0},{n:1,w:-1},{n:-1, w:0},{n:4, w:-1},{n:-1, w:0},{n:-1, w:0},{n:-1, w:0},{n:2,w:-1},{n:7,w:-1}],
                             [{n:9, w:-1},{n:-1, w:0},{n:3, w:-1},{n:-1, w:0},{n:-1, w:0},{n:6,w:-1},{n:-1, w:0},{n:-1, w:0},{n:1,w:-1}]];*/
 
-            return this.buildWeights(template);
+            return this.buildWeightsAndXY(template);
+        },
+        initUserMatrix : function() {
+            var template = this.getTemplate();
+            //clone template
+            this.userMatrix = template.slice(0);
+            this.userMatrix = this.buildWeightsAndXY(template);
+        },
+        getUserMatrix : function(){
+            return  this.userMatrix;
         },
         isValidateTemplate: function(){
             var template = this.getTemplate();
@@ -53,7 +65,7 @@ SuDaVi.service("sudavicode",function(){
             return {result : true, message : "Ok", template: template};
         },
         solveSudoku : function(template){
-            var weights = this.buildWeights(template);
+            var weights = this.buildWeightsAndXY(template);
             this.printMatrix(weights);
             var getout = false;
             var timeout = 999;
@@ -159,30 +171,23 @@ SuDaVi.service("sudavicode",function(){
                 }
             }
         },
-        buildWeights : function(weights)
+        buildWeightsAndXY : function(weights)
         {
-            // for(var x = 0; x < this.maxLength; x++)
-            // {
-            //     for(var y = 0; y < this.maxLength; y++)
-            //     {
-            //         if(weights[x][y].w != -1)
-            //         {
-            //             result[x][y].w = -1;
-            //         }
-            //         else if(weights[x][y].w == -1)
-            //         {
-            //             result[x][y].w = 0;
-            //         }
-            //     }
-            // }
-            // return result;
-
             for(var x = 0; x < this.maxLength; x++)
             {
                 for(var y = 0; y < this.maxLength; y++)
                 {
                     weights[x][y].x = x;
                     weights[x][y].y = y;
+
+                    if(weights[x][y].w != -1)
+                    {
+                        weights[x][y].w = -1;
+                    }
+                    else if(weights[x][y].w == -1)
+                    {
+                        weights[x][y].w = 0;
+                    }
                 }
             }
             return weights;
@@ -215,7 +220,13 @@ SuDaVi.service("sudavicode",function(){
             return true;
         },
         isValidNumberInXY : function(x,y,number){
-            return this.result[x][y].n == number;
+            var isOk = this.result[x][y].n == number;
+            if(isOk){
+                this.userMatrix[x][y].n = number;
+                this.userMatrix[x][y].w = -1;
+            }else{
+                this.Attempts++;
+            }
         }
     };
 });
