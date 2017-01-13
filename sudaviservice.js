@@ -4,12 +4,12 @@ SuDaVi.service("sudavicode",function(){
         errorColletion : ["Invalid size on element"],
         maxLength : 9,
         init: function(){
-            var isValid = this.isValidateTemplate()
-            if(isValid.result)
-            {
-                console.log(isValid.message);
-                this.solveSudoku(isValid.template);
-            }
+            // var isValid = this.isValidateTemplate()
+            // if(isValid.result)
+            // {
+            //     console.log(isValid.message);
+            //     this.solveSudoku(isValid.template);
+            // }
         },
         getTemplate : function (){
             var template = [[6,-1,4,-1,8,3,-1,-1,7],
@@ -55,7 +55,7 @@ SuDaVi.service("sudavicode",function(){
                             var canBe = this.CanBeInVertical(y,template,i) ||
                                         this.CanBeInHorizontal(x,template,i) ||
                                         this.CanBeInBox(x,y,template,i);
-                            
+
                             if(weights[x][y] != -1 && canBe)
                             {
                                 weights[x][y]++;
@@ -149,7 +149,7 @@ SuDaVi.service("sudavicode",function(){
         printMatrix : function(matrix)
         {
             var result = "";
-            for(var x = 0; x < this.maxLength; x++) 
+            for(var x = 0; x < this.maxLength; x++)
             {
                 for(var y = 0; y < this.maxLength; y++)
                 {
