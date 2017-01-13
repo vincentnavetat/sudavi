@@ -19,13 +19,14 @@
 .btn,
 .btn:link,
 .btn:visited {
+  border: 0;
   border-radius: .3em;
   color: #111;
+  cursor: pointer;
   display: inline-block;
-  letter-spacing: .15em;
-  padding: 1em .75em;
+  margin-bottom: .3em;
+  padding: .5em 1em;
   text-decoration: none;
-  text-transform: uppercase;
   -webkit-transition: color .4s, background-color .4s, border .4s;
           transition: color .4s, background-color .4s, border .4s;
 }

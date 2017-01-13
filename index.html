@@ -20,40 +20,46 @@
   </head>
   <body class="bg-base bg-center pa1 h-100">
     <div ng-controller="mainController">
-      <div class="cf mw6 center">
+      <div class="cf mw6 center relative">
         <h1 class="f1 serif normal tc white mt5 mb0">Sudavi</h1>
         <h2 class="f3 tc normal white nt2 mb5">You really think you're smart?</h2>
 
+        <div id="solution-popup" class="solution-popup dn hidden cf absolute w-60">
+          <div class="pa3 bg-white br2 mt4 tc shadow-5">
+            <h1 class="f2 serif normal tc mb1">Well done</h1>
+            <img src="https://m.popkey.co/d2a483/eL4ZQ_s-200x150.gif" alt="">
+            <p>You're officially a loser.</p>
+          </div>
+        </div>
+
         <div class="fl w-100 pa1">
-            <div ng-repeat="row in template track by $index">
-              <div ng-repeat="col in row track by $index">
-                <div class="fl w-10 pa1">
-                  <div class="tc">
-                    <div ng-if="col.n != -1">
-                      <input type="text" class="cell-{{col.x}}-{{col.y}} b--none mw-100 pv2 pv3-ns tc ttu" disabled maxlength="1" value="{{col.n}}" id="element[{{col.x}}][{{col.y}}]" x="{{col.x}}" y="{{col.y}}" ng-keyup="onKeyNumber($event)">
-                    </div>
-                    <div ng-if="col.n == -1">
-                      <input type="text" class="cell-{{col.x}}-{{col.y}} b--none mw-100 pv2 pv3-ns tc ttu" maxlength="1" id="element[{{col.x}}][{{col.y}}]" x="{{col.x}}" y="{{col.y}}" ng-keyup="onKeyNumber($event)">
-                    </div>
+          <div ng-repeat="row in template track by $index">
+            <div ng-repeat="col in row track by $index">
+              <div class="fl w-10 pa1">
+                <div class="tc">
+                  <div ng-if="col.n != -1">
+                    <input type="number" class="cell-{{col.x}}-{{col.y}} b--none w-100 pv2 pv3-ns tc ttu number-given" disabled min="1" max="9" value="{{col.n}}" id="element[{{col.x}}][{{col.y}}]" x="{{col.x}}" y="{{col.y}}" ng-keyup="onKeyNumber($event)">
+                  </div>
+                  <div ng-if="col.n == -1">
+                    <input type="number" class="cell-{{col.x}}-{{col.y}} b--none w-100 pv2 pv3-ns tc ttu" min="1" max="9" id="element[{{col.x}}][{{col.y}}]" x="{{col.x}}" y="{{col.y}}" ng-keyup="onKeyNumber($event)">
                   </div>
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
-    <div>
-    </div>
-      <div class="cf mw7 center">
+      <div class="cf mw7 center relative">
         <div class="fl w-100 pa1 bg-white-70 br2 mt5">
-          <div class="fl w-50 pa1">
+          <div class="fl w-100  pa1">
               Mistakes: {{Attempts}}
-            <div class="pv1 f6">
-              Oh god...
+            <div class="pv1 f6 insults">
+              Are you always this stupid or are you making a special effort today?
             </div>
           </div>
-          <div class="fl w-50 pa1">
-            <div class="tr">
-              <button ng-click="onSolution()" type="button" class="btn btn--green tc">Solution!</button>
+          <div class="fl w-100 pa1">
+            <div class="tr tc">
+              <button ng-click="onSolution()" type="button" class="btn btn--green tc">Give me the solution!</button>
             </div>
           </div>
         </div>

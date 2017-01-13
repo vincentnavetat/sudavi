@@ -562,7 +562,7 @@ img { max-width: 100%; }
 .shadow-2 { box-shadow: 0 0 8px 2px rgba( 0, 0, 0, .2 ); }
 .shadow-3 { box-shadow: 2px 2px 4px 2px rgba( 0, 0, 0, .2 ); }
 .shadow-4 { box-shadow: 2px 2px 8px 0 rgba( 0, 0, 0, .2 ); }
-.shadow-5 { box-shadow: 4px 4px 8px 0 rgba( 0, 0, 0, .2 ); }
+.shadow-5 { box-shadow: 0 0 1rem .6rem rgba( 0, 0, 0, .1 ); }
 /*
  *
  * btns.css
@@ -579,7 +579,7 @@ img { max-width: 100%; }
   <a href="#" class="btn">Default button</a>
 
 */
-.btn, .btn:link, .btn:visited { border-radius: .3em; color: #111; display: inline-block; letter-spacing: .15em; padding: 1em .75em; text-decoration: none; text-transform: uppercase; -webkit-transition: color .4s, background-color .4s, border .4s; transition: color .4s, background-color .4s, border .4s; }
+.btn, .btn:link, .btn:visited { border: 0; border-radius: .3em; color: #111; cursor: pointer; display: inline-block; margin-bottom: .3em; padding: .5em 1em; text-decoration: none; -webkit-transition: color .4s, background-color .4s, border .4s; transition: color .4s, background-color .4s, border .4s; }
 .btn:hover { color: #7fdbff; -webkit-transition: background-color .3s, color .3s, border .3s; transition: background-color .3s, color .3s, border .3s; }
 .btn:active { color: #0074d9; -webkit-transition: background-color .3s, color .3s, border .3s; transition: background-color .3s, color .3s, border .3s; }
 /*
@@ -1334,15 +1334,40 @@ code, .code { font-family: Consolas, monaco, monospace; }
 .bg-washed-red { background-color: #ffdfdf; }
 .bg-base { background: -webkit-linear-gradient( top, #ffb372 0%, #ffe471 100% ); background: linear-gradient( to bottom, #ffb372 0%, #ffe471 100% ); background-attachment: fixed; }
 .mistake-2 { background: -webkit-linear-gradient( top, #ffa559 0%, #ffe471 100% ); background: linear-gradient( to bottom, #ffa559 0%, #ffe471 100% ); }
-.mistake-4 { background: -webkit-linear-gradient( top, #ff983f 0%, #ffa559 100% ); background: linear-gradient( to bottom, #ff983f 0%, #ffa559 100% ); }
-.mistake-6 { background: -webkit-linear-gradient( top, #ff8a26 0%, #ff983f 100% ); background: linear-gradient( to bottom, #ff8a26 0%, #ff983f 100% ); }
-.mistake-8 { background: -webkit-linear-gradient( top, #ff7c0c 0%, #ff8a26 100% ); background: linear-gradient( to bottom, #ff7c0c 0%, #ff8a26 100% ); }
-.mistake-10 { background: -webkit-linear-gradient( top, #f26f00 0%, #ff7c0c 100% ); background: linear-gradient( to bottom, #f26f00 0%, #ff7c0c 100% ); }
-.mistake-12 { background: -webkit-linear-gradient( top, #d86400 0%, #f26f00 100% ); background: linear-gradient( to bottom, #d86400 0%, #f26f00 100% ); }
-.mistake-14 { background: -webkit-linear-gradient( top, #bf5800 0%, #d86400 100% ); background: linear-gradient( to bottom, #bf5800 0%, #d86400 100% ); }
-.mistake-16 { background: -webkit-linear-gradient( top, #a54c00 0%, #bf5800 100% ); background: linear-gradient( to bottom, #a54c00 0%, #bf5800 100% ); }
-.mistake-18 { background: -webkit-linear-gradient( top, #8c4000 0%, #a54c00 100% ); background: linear-gradient( to bottom, #8c4000 0%, #a54c00 100% ); }
-.mistake-14 { background: -webkit-linear-gradient( top, #723500 0%, #8c4000 100% ); background: linear-gradient( to bottom, #723500 0%, #8c4000 100% ); }
+.mistake-3 { background: -webkit-linear-gradient( top, #ffa559 0%, #ffe471 100% ); background: linear-gradient( to bottom, #ffa559 0%, #ffe471 100% ); }
+.mistake-2 .insults, .mistake-3 .insults { font-size: 1.1rem; }
+.mistake-4, .mistake-5 { background: -webkit-linear-gradient( top, #ff983f 0%, #ffa559 100% ); background: linear-gradient( to bottom, #ff983f 0%, #ffa559 100% ); }
+.mistake-4 .insults, .mistake-5 .insults { font-size: 1.2rem; }
+.mistake-6, .mistake-7 { background: -webkit-linear-gradient( top, #ff8a26 0%, #ff983f 100% ); background: linear-gradient( to bottom, #ff8a26 0%, #ff983f 100% ); }
+.mistake-6 .insults, .mistake-7 .insults { font-size: 1.3rem; }
+.mistake-8, .mistake-9 { background: -webkit-linear-gradient( top, #ff7c0c 0%, #ff8a26 100% ); background: linear-gradient( to bottom, #ff7c0c 0%, #ff8a26 100% ); }
+.mistake-8 .insults, .mistake-9 .insults { font-size: 1.4rem; }
+.mistake-10, .mistake-11 { background: -webkit-linear-gradient( top, #f26f00 0%, #ff7c0c 100% ); background: linear-gradient( to bottom, #f26f00 0%, #ff7c0c 100% ); }
+.mistake-10 .insults, .mistake-11 .insults { font-size: 1.5rem; }
+.mistake-12, .mistake-13 { background: -webkit-linear-gradient( top, #d86400 0%, #f26f00 100% ); background: linear-gradient( to bottom, #d86400 0%, #f26f00 100% ); }
+.mistake-12 .insults, .mistake-13 .insults { font-size: 1.6rem; }
+.mistake-14, .mistake-15 { background: -webkit-linear-gradient( top, #bf5800 0%, #d86400 100% ); background: linear-gradient( to bottom, #bf5800 0%, #d86400 100% ); }
+.mistake-14 .insults, .mistake-15 .insults { font-size: 1.7rem; }
+.mistake-16, .mistake-17 { background: -webkit-linear-gradient( top, #a54c00 0%, #bf5800 100% ); background: linear-gradient( to bottom, #a54c00 0%, #bf5800 100% ); }
+.mistake-16 .insults, .mistake-17 .insults { font-size: 1.8rem; }
+.mistake-18, .mistake-19 { background: -webkit-linear-gradient( top, #8c4000 0%, #a54c00 100% ); background: linear-gradient( to bottom, #8c4000 0%, #a54c00 100% ); }
+.mistake-18 .insults, .mistake-19 .insults { font-size: 1.9rem; }
+.mistake-20 { background: -webkit-linear-gradient( top, #723500 0%, #8c4000 100% ); background: linear-gradient( to bottom, #723500 0%, #8c4000 100% ); }
+.mistake-20 .insults { font-size: 2rem; }
+.mistake-5 .btn, .mistake-6 .btn, .mistake-7 .btn, .mistake-8 .btn,
+.mistake-9 .btn, .mistake-10 .btn { padding: 1em 1.5em; }
+.mistake-11 .btn, .mistake-12 .btn, .mistake-13 .btn, .mistake-14 .btn,
+.mistake-15 .btn, .mistake-16 .btn
+.mistake-17 .btn, .mistake-18 .btn,
+.mistake-19 .btn, .mistake-20 .btn { padding: 1.5em 1.5em; text-transform: uppercase; font-size: 2.5rem; font-weight: bold; }
+.solution-popup { margin-left: 20%; padding-top: 4rem; }
+input[type="number"] { text-indent: .5rem; }
+input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; cursor: pointer; display: block; width: 8px; color: #333; text-align: center; position: relative; }
+input[type=number]::-webkit-inner-spin-button:before,
+input[type=number]::-webkit-inner-spin-button:after { content: "^"; position: absolute; right: 0; font-family: monospace; line-height: ; }
+input[type=number]::-webkit-inner-spin-button:before { top: 0; }
+input[type=number]::-webkit-inner-spin-button:after { bottom: 0; -webkit-transform: rotate( 180deg ); }
+input:not(.number-given):disabled { background-color: #caeab5; }
 /* 
   
    SKINS:PSEUDO
