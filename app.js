@@ -27,7 +27,7 @@ SuDaVi.controller('mainController', function($scope,$timeout,sudavicode){
                 if(!isValid) {
                     el.style.backgroundColor = "#E58080";
                     var element = document.body;
-                    if(attempts > 1){
+                    if(attempts > 1 && attempts < 21){
                         element.classList.remove("mistake-" + (attempts - 1));
                     }
                     if(attempts < 21){
@@ -49,7 +49,7 @@ SuDaVi.controller('mainController', function($scope,$timeout,sudavicode){
     }
 
     $scope.onSolution = function($event){
-      
+
         var solutionMatrix = sudavicode.core.getSolutionMatrix();
         for(var x = 0; x < sudavicode.core.maxLength; x++)
         {
