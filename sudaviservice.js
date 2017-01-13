@@ -34,7 +34,7 @@ SuDaVi.service("sudavicode",function(){
                             [{n:-1, w:0},{n:1,w:-1},{n:-1, w:0},{n:4, w:-1},{n:-1, w:0},{n:-1, w:0},{n:-1, w:0},{n:2,w:-1},{n:7,w:-1}],
                             [{n:9, w:-1},{n:-1, w:0},{n:3, w:-1},{n:-1, w:0},{n:-1, w:0},{n:6,w:-1},{n:-1, w:0},{n:-1, w:0},{n:1,w:-1}]];*/
 
-            return template;
+            return this.buildWeights(template);
         },
         isValidateTemplate: function(){
             var template = this.getTemplate();
@@ -71,7 +71,7 @@ SuDaVi.service("sudavicode",function(){
                             var canBe = this.CanBeInVertical(y,template,i);
                             canBe = canBe && this.CanBeInHorizontal(x,template,i);
                             canBe = canBe && this.CanBeInBox(x,y,template,i);
-                            
+
                             if(weights[x][y].w != -1 && canBe)
                             {
                                 weights[x][y].w++;
@@ -161,27 +161,36 @@ SuDaVi.service("sudavicode",function(){
         },
         buildWeights : function(weights)
         {
+            // for(var x = 0; x < this.maxLength; x++)
+            // {
+            //     for(var y = 0; y < this.maxLength; y++)
+            //     {
+            //         if(weights[x][y].w != -1)
+            //         {
+            //             result[x][y].w = -1;
+            //         }
+            //         else if(weights[x][y].w == -1)
+            //         {
+            //             result[x][y].w = 0;
+            //         }
+            //     }
+            // }
+            // return result;
+
             for(var x = 0; x < this.maxLength; x++)
             {
                 for(var y = 0; y < this.maxLength; y++)
                 {
-                    if(weights[x][y].w != -1)
-                    {
-                        result[x][y].w = -1;
-                    }
-                    else if(weights[x][y].w == -1)
-                    {
-                        result[x][y].w = 0;
-                    }
+                    weights[x][y].x = x;
+                    weights[x][y].y = y;
                 }
             }
-            return result;
             return weights;
         },
         printMatrix : function(matrix)
         {
             var result = "";
-            for(var x = 0; x < this.maxLength; x++) 
+            for(var x = 0; x < this.maxLength; x++)
             {
                 for(var y = 0; y < this.maxLength; y++)
                 {

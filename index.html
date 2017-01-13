@@ -29,11 +29,11 @@
               <div ng-repeat="col in row track by $index">
                 <div class="fl w-third pa1">
                   <div class="tc">
-                    <div ng-if="col != -1">
-                      <input type="text" ng-class="template.indexOf(row) % 2 ? 'bg-white-70' : 'bg-white'" class="b--none mw-100 pv2 pv3-ns tc ttu" disabled maxlength="1" value="{{col}}">
+                    <div ng-if="col.n != -1">
+                      <input type="text" ng-class="template.indexOf(row) % 2 ? 'bg-white-70' : 'bg-white'" class="b--none mw-100 pv2 pv3-ns tc ttu" disabled maxlength="1" value="{{col.n}}" id="element[{{col.x}}][{{col.y}}]" x="{{col.x}}" y="{{col.y}}" ng-keyup="onKeyNumber($event)">
                     </div>
-                    <div ng-if="col == -1">
-                      <input type="text" ng-class="template.indexOf(row) % 2 ? 'bg-white-70' : 'bg-white'" class="b--none mw-100 pv2 pv3-ns tc ttu" maxlength="1">
+                    <div ng-if="col.n == -1">
+                      <input type="text" ng-class="template.indexOf(row) % 2 ? 'bg-white-70' : 'bg-white'" class="b--none mw-100 pv2 pv3-ns tc ttu" maxlength="1" id="element[{{col.x}}][{{col.y}}]" x="{{col.x}}" y="{{col.y}}" ng-keyup="onKeyNumber($event)">
                     </div>
                   </div>
                 </div>
@@ -42,7 +42,6 @@
           </div>
         </div>
       </div>
-
     </div>
 
     <div class="cf mw7 center">
