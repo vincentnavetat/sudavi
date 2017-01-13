@@ -10,8 +10,8 @@ SuDaVi.controller('mainController', function($scope,$timeout,sudavicode){
     //Events
     $scope.onKeyNumber = function($event){
         var key = $event.keyCode;
-        console.log(key);
-        console.log($event);
+        // console.log(key);
+        // console.log($event);
 
         var el = $event.srcElement;
         if(el.id.indexOf("element") > -1){
@@ -22,13 +22,10 @@ SuDaVi.controller('mainController', function($scope,$timeout,sudavicode){
                 var value = parseInt(el.value);
 
                 var isValid = sudavicode.core.isValidNumberInXY(x,y,value);
-                var attempts = sudavicode.core.getAttempts()
-                console.log(isValid);
-                if(isValid){
-                    el.style.backgroundColor = "#009900";
-                    el.disabled = true;
-                }else{
-                    el.style.backgroundColor = "#E50000";
+                var attempts = sudavicode.core.getAttempts();
+
+                if(!isValid) {
+                    el.style.backgroundColor = "#E58080";
                     var element = document.body;
                     if(attempts > 1){
                         element.classList.remove("mistake-" + (attempts - 1));
@@ -60,6 +57,6 @@ SuDaVi.controller('mainController', function($scope,$timeout,sudavicode){
                 document.getElementById("element["+x+"]["+y+"]").value = solutionMatrix[x][y].n;
             }
         }
-        //document.getElementById("solution-popup").style.display = "block";
+        document.getElementById('solution-popup').style.display = 'block';
     }
 });

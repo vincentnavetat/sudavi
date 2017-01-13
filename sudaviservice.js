@@ -19,7 +19,7 @@ SuDaVi.service("sudavicode",function(){
             var isValid = this.isValidateTemplate()
             if(isValid.result)
             {
-                console.log(isValid.message);
+                //console.log(isValid.message);
                 this.solveSudoku(isValid.template);
                 this.initUserMatrix();
                 this.Attempts = 0;
@@ -149,7 +149,7 @@ SuDaVi.service("sudavicode",function(){
                     var xgfgf = "";
                 }
             }
-            console.log("Result");
+            //console.log("Result");
             this.printMatrix(weights);
             this.result = weights;
         },
@@ -303,7 +303,7 @@ SuDaVi.service("sudavicode",function(){
                 {
                     result +=  " ("+x+","+y+")( " + matrix[x][y].n + " | " +  matrix[x][y].w  + " ) ";
                 }
-                console.log(result);
+                //console.log(result);
                 result = "";
             }
         },
@@ -329,6 +329,7 @@ SuDaVi.service("sudavicode",function(){
             }else{
                 this.Attempts++;
             }
+            return isOk;
         },
         getSolutionMatrix : function(){
             return this.result;

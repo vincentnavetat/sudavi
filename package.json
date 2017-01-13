@@ -45,5 +45,8 @@
     "build:css": "tachyons src/tachyons.css > css/tachyons.css",
     "build:minify": "tachyons src/tachyons.css -m > css/tachyons.min.css",
     "build:watch": "watch 'npm run build' ./src/"
+  },
+  "dependencies": {
+    "postcss-colour-functions": "^1.5.1"
   }
 }
