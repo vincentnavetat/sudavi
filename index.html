@@ -29,7 +29,12 @@
               <div ng-repeat="col in row track by $index">
                 <div class="fl w-third pa1">
                   <div class="tc">
-                    <input type="text" ng-if="col != -1" ng-class="template.indexOf(row) % 2 ? 'bg-white-70' : 'bg-white'" class=" b--none mw-100 pv2 pv3-ns tc ttu" maxlength="1" value="{{col}}">
+                    <div ng-if="col != -1">
+                      <input type="text" ng-class="template.indexOf(row) % 2 ? 'bg-white-70' : 'bg-white'" class="b--none mw-100 pv2 pv3-ns tc ttu" disabled maxlength="1" value="{{col}}">
+                    </div>
+                    <div ng-if="col == -1">
+                      <input type="text" ng-class="template.indexOf(row) % 2 ? 'bg-white-70' : 'bg-white'" class="b--none mw-100 pv2 pv3-ns tc ttu" maxlength="1">
+                    </div>
                   </div>
                 </div>
               </div>
