@@ -4,6 +4,17 @@ SuDaVi.service("sudavicode",function(){
         errorColletion : ["Invalid size on element"],
         maxLength : 9,
         Attempts : 0,
+        insults: ["Really??",
+                    "Please, use your brain a little",
+                    "Your mom is getting ashamed",
+                    "Even Joshua is better than you...",
+                    "You're embarrassing yourself",
+                    "Delwar, is it you playing?",
+                    "Ok, time to click the Solution button",
+                    "Some day you will find yourself and wish you hadn't",
+                    "I hope HR won't see your score",
+                    "Are you always this stupid or are you making a special effort today?",
+                    "One more mistake and you'll get a black eye like Viraj"],
         init: function(){
             var isValid = this.isValidateTemplate()
             if(isValid.result)
@@ -16,6 +27,9 @@ SuDaVi.service("sudavicode",function(){
         },
         getAttempts : function(){
             return this.Attempts;
+        },
+        getInsults : function(){
+            return this.insults;
         },
         getTemplate : function (){
             //w: -1 => do nothing
@@ -39,6 +53,26 @@ SuDaVi.service("sudavicode",function(){
                             [{n:-1, w:0},{n:7, w:-1},{n:-1, w:0},{n:-1, w:0},{n:5, w:-1},{n:1,w:-1},{n:-1, w:0},{n:-1, w:0},{n:-1, w:0}],
                             [{n:-1, w:0},{n:1,w:-1},{n:-1, w:0},{n:4, w:-1},{n:-1, w:0},{n:-1, w:0},{n:-1, w:0},{n:2,w:-1},{n:7,w:-1}],
                             [{n:9, w:-1},{n:-1, w:0},{n:3, w:-1},{n:-1, w:0},{n:-1, w:0},{n:6,w:-1},{n:-1, w:0},{n:-1, w:0},{n:1,w:-1}]];*/
+
+            /*template = [[{n:5,w:-1},{n:3, w:-1},{n:1, w:-1},{n:7,w: -1},{n:8,w:-1},{n:-1,w:0},{n:-1, w:0},{n:4, w:-1},{n:-1,w:0}],
+                            [{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:6, w:-1},{n:-1,w:0},{n:-1,w:0}],
+                            [{n:-1, w:0},{n:-1,w:0},{n:-1, w:0},{n:3, w:-1},{n:1,w:-1},{n:2, w:-1},{n:-1,w:0},{n:-1, w:0},{n:-1, w:0}],
+                            [{n:1, w:-1},{n:8,w:-1},{n:9,w:-1},{n:-1, w:0},{n:-1, w:0},{n:-1, w:0},{n:-1,w:0},{n:-1,w:0},{n:2,w:-1}],
+                            [{n:-1, w:0},{n:2,w:-1},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:-1, w:0},{n:6,w:-1}],                           
+                            [{n:-1,w:0},{n:-1,w:0},{n:-1, w:0},{n:-1, w:0},{n:3,w:-1},{n:9,w:-1},{n:-1, w:0},{n:-1,w:0},{n:-1,w:0}],
+                            [{n:6, w:-1},{n:-1, w:0},{n:-1, w:0},{n:-1, w:0},{n:-1, w:0},{n:-1,w:0},{n:-1, w:0},{n:2, w:-1},{n:7, w:-1}],
+                            [{n:8,w:-1},{n:-1,w:0},{n:-1,w:0},{n:-1, w:0},{n:-1,w:0},{n:-1,w:0},{n:9, w:-1},{n:-1,w:0},{n:5,w:-1}],
+                            [{n:-1, w:0},{n:-1,w:0},{n:-1, w:0},{n:-1,w:0},{n:5,w:-1},{n:8,w:-1},{n:-1,w:0},{n:-1, w:0},{n:4,w:-1}]];*/
+
+            /*template = [[{n:-1,w:0},{n:3, w:-1},{n:5, w:-1},{n:-1,w: 0},{n:-1,w:0},{n:-1,w:0},{n:-1, w:0},{n:-1, w:-0},{n:6,w:-1}],
+                        [{n:1,w:-1},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:-1, w:0},{n:-1,w:0},{n:7,w:-1}],
+                        [{n:4, w:-1},{n:-1,w:0},{n:7, w:-1},{n:-1, w:0},{n:-1,w:0},{n:1, w:-1},{n:3,w:-1},{n:5, w:-1},{n:9, w:-1}],
+                        [{n:-1, w:0},{n:2,w:-1},{n:-1,w:0},{n:-1, w:0},{n:8, w:-1},{n:9, w:-1},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0}],
+                        [{n:3, w:-1},{n:9,w:-1},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:1,w:-1},{n:-1, w:0},{n:-1,w:0}],
+                        [{n:-1,w:0},{n:-1,w:0},{n:1, w:-1},{n:-1, w:0},{n:-1,w:0},{n:3,w:-1},{n:-1, w:0},{n:-1,w:0},{n:-1,w:0}],
+                        [{n:8, w:-1},{n:-1, w:0},{n:-1, w:0},{n:-1, w:0},{n:-1, w:0},{n:-1,w:0},{n:9, w:-1},{n:2, w:-1},{n:-1, w:0}],
+                        [{n:2,w:-1},{n:1,w:-1},{n:-1,w:0},{n:-1, w:0},{n:-1,w:0},{n:7,w:-1},{n:6, w:-1},{n:3,w:-1},{n:4,w:-1}],
+                        [{n:-1, w:0},{n:-1,w:0},{n:-1, w:0},{n:6,w:-1},{n:-1,w:0},{n:-1,w:0},{n:-1,w:0},{n:7, w:-1},{n:-1,w:0}]];*/
 
             return this.buildWeightsAndXY(template);
         },
@@ -71,7 +105,7 @@ SuDaVi.service("sudavicode",function(){
             var weights = this.buildWeightsAndXY(template);
             this.printMatrix(weights);
             var getout = false;
-            var timeout = 999;
+            var timeout = 9999;
             while(!this.isDone(weights) && !getout){
                 for(var x = 0; x < this.maxLength; x++)
                 {
@@ -79,18 +113,31 @@ SuDaVi.service("sudavicode",function(){
                     {
                         for(var i = 1; i <= this.maxLength; i++)
                         {
-                            if(x == 0 && y == 3 && i == 1)
-                            {
-                                var rere = "";
-                            }
                             var canBe = this.CanBeInVertical(y,template,i);
                             canBe = canBe && this.CanBeInHorizontal(x,template,i);
                             canBe = canBe && this.CanBeInBox(x,y,template,i);
 
-                            if(weights[x][y].w != -1 && canBe)
+                            if(x == 0 && y == 6 && i == 2)
                             {
-                                weights[x][y].w++;
-                                weights[x][y].t = i;
+                                var fff="";
+                            }
+
+                            if(canBe){
+                                var canBeInOtherFieldInBox = this.CanBeInOtherFieldInBox(x,y,template,i);
+
+                                if(canBeInOtherFieldInBox){
+                                    cannotBeElsewhere = this.IAmTheOnlyOneMissing(x,y,template);
+                                }
+
+                                if(!canBeInOtherFieldInBox){
+                                    weights[x][y].w = -1;
+                                    weights[x][y].n = i;
+                                }
+                                else if(weights[x][y].w != -1 && canBe)
+                                {
+                                    weights[x][y].w++;
+                                    weights[x][y].t = i;
+                                }
                             }
                         }
                     }
@@ -115,6 +162,16 @@ SuDaVi.service("sudavicode",function(){
             }
             return true;
         },
+        GetNumberOfFieldFilledInVertical : function(y, template){
+            var result = 0;
+            for(var i = 0; i < this.maxLength; i++){
+                if(template[i][y].n != -1)
+                {
+                    result++;
+                }
+            }
+            return result;
+        },
         CanBeInHorizontal : function(x, template, number){
             for(var i = 0; i < this.maxLength; i++){
                 if(template[x][i].n == number)
@@ -123,6 +180,16 @@ SuDaVi.service("sudavicode",function(){
                 }
             }
             return true;
+        },
+        GetNumberOfFieldFilledInHorizontal : function(x, template){
+            var result = 0;
+            for(var i = 0; i < this.maxLength; i++){
+                if(template[x][i].n == -1)
+                {
+                     result++;
+                }
+            }
+            return  result;
         },
         CanBeInBox : function(x, y, template, number){
 
@@ -139,6 +206,38 @@ SuDaVi.service("sudavicode",function(){
                 }
             }
             return true;
+        },
+        CanBeInOtherFieldInBox : function (x,y,template,number)
+        {
+            var box = this.GetBoxNumber(x,y);
+
+            var canBe = false;
+            for(var i = box.x; i < box.x + 3; i++)
+            {
+                for(var j = box.y; j < box.y + 3; j++)
+                {
+                    if(x == i && y == j)
+                        continue;
+
+                    var canBe = this.CanBeInVertical(j,template,number);
+                        canBe = canBe && this.CanBeInHorizontal(i,template,number)
+                        canBe = canBe && template[i][j].n == -1;
+                    
+                    if(canBe){
+                        return canBe;
+                    }
+                }
+            }
+            return canBe;
+        },
+        IAmTheOnlyOneMissing : function(x,y,template){
+            var resultVertical = this.GetNumberOfFieldFilledInVertical(y,template);
+            var resultHorizontal = this.GetNumberOfFieldFilledInHorizontal(x,template);
+            if(resultVertical == 1 || resultHorizontal == 1)
+            {
+                return true;
+            }
+            return false;
         },
         GetBoxNumber : function(x,y){
             var xResult = x/3;

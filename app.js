@@ -33,7 +33,14 @@ SuDaVi.controller('mainController', function($scope,$timeout,sudavicode){
                     if(attempts > 1){
                         element.classList.remove("mistake-" + (attempts - 1));
                     }
-                    element.classList.add("mistake-" + attempts);
+                    if(attempts < 21){
+                        element.classList.add("mistake-" + attempts);
+                    }
+                    var insults = sudavicode.core.getInsults();
+                    if(attempts > 1 && attempts - 2 < insults.length )
+                    {
+                        $scope.Insults = insults[attempts-2];
+                    }
                 }
                 $scope.Attempts = attempts;
                 $scope.AreYouDone = sudavicode.core.isDone($scope.template);
@@ -53,5 +60,6 @@ SuDaVi.controller('mainController', function($scope,$timeout,sudavicode){
                 document.getElementById("element["+x+"]["+y+"]").value = solutionMatrix[x][y].n;
             }
         }
+        //document.getElementById("solution-popup").style.display = "block";
     }
 });
