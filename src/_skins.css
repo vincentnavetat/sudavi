@@ -178,6 +178,7 @@
 .mistake-2,
 .mistake-3 {
   background: linear-gradient(to bottom, #ffa559 0%, var(--yellow) 100%);
+  background-attachment: fixed;
 }
 
 .mistake-2 .insults,
@@ -188,6 +189,7 @@
 .mistake-4,
 .mistake-5 {
   background: linear-gradient(to bottom, #ff983f 0%, #ffa559 100%);
+  background-attachment: fixed;
 }
 
 .mistake-4 .insults,
@@ -198,6 +200,7 @@
 .mistake-6,
 .mistake-7 {
   background: linear-gradient(to bottom, #ff8a26 0%, #ff983f 100%);
+  background-attachment: fixed;
 }
 
 .mistake-6 .insults,
@@ -208,6 +211,7 @@
 .mistake-8,
 .mistake-9 {
   background: linear-gradient(to bottom, #ff7c0c 0%, #ff8a26 100%);
+  background-attachment: fixed;
 }
 
 .mistake-8 .insults,
@@ -218,6 +222,7 @@
 .mistake-10,
 .mistake-11 {
   background: linear-gradient(to bottom, #f26f00 0%, #ff7c0c 100%);
+  background-attachment: fixed;
 }
 
 .mistake-10 .insults,
@@ -228,6 +233,7 @@
 .mistake-12,
 .mistake-13 {
   background: linear-gradient(to bottom, #d86400 0%, #f26f00 100%);
+  background-attachment: fixed;
 }
 
 .mistake-12 .insults,
@@ -238,6 +244,7 @@
 .mistake-14,
 .mistake-15 {
   background: linear-gradient(to bottom, #bf5800 0%, #d86400 100%);
+  background-attachment: fixed;
 }
 
 .mistake-14 .insults,
@@ -248,6 +255,7 @@
 .mistake-16,
 .mistake-17 {
   background: linear-gradient(to bottom, #a54c00 0%, #bf5800 100%);
+  background-attachment: fixed;
 }
 
 .mistake-16 .insults,
@@ -258,6 +266,7 @@
 .mistake-18,
 .mistake-19 {
   background: linear-gradient(to bottom, #8c4000 0%, #a54c00 100%);
+  background-attachment: fixed;
 }
 
 .mistake-18 .insults,
@@ -267,6 +276,7 @@
 
 .mistake-20 {
   background: linear-gradient(to bottom, #723500 0%, #8c4000 100%);
+  background-attachment: fixed;
 }
 
 .mistake-20 .insults {
